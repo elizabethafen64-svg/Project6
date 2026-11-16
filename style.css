@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background: #FFF7F0;
+    font-family: Arial, sans-serif;
+    color: #030303
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0
+}
+
+.logo {
+    width: 60px
+}
+
+.btn-black {
+    background: #030303;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px
+}
+
+.btn-orange {
+    background: #EB7565;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-block
+}
+
+.btn-black:hover {
+    background: #755CDE
+}
+
+.btn-orange:hover {
+    background: #F6A560
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 40px 0
+}
+
+.hero h1 {
+    font-size: 56px;
+    margin-bottom: 15px
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #7A746E;
+    line-height: 1.6
+}
+
+/* GRID - DESKTOP */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+        "graphic graphic ui apps photo photo"
+        "graphic graphic illus illus motion motion";
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.card {
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: 700
+}
+
+.card img {
+    width: 64px;
+    align-self: flex-end
+}
+
+.card span {
+    order: 2
+}
+
+.graphic {
+    grid-area: graphic;
+    background: #755CDE;
+    min-height: 360px
+}
+
+.graphic img {
+    width: 128px
+}
+
+.ui {
+    grid-area: ui;
+    background: #F6A560
+}
+
+.apps {
+    grid-area: apps;
+    background: #F39E9E
+}
+
+.photo {
+    grid-area: photo;
+    background: #61E6C2
+}
+
+.illus {
+    grid-area: illus;
+    background: #EB7565
+}
+
+.motion {
+    grid-area: motion;
+    background: #552049
+}
+
+/* ABOUT */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 80px
+}
+
+.about img {
+    width: 440px;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0
+}
+
+.about h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 20px
+}
+
+.about p {
+    color: #7A746E;
+    line-height: 1.6;
+    margin-bottom: 25px
+}
+
+/* MY WORK */
+.work {
+    text-align: center;
+    margin-bottom: 80px
+}
+
+.work h2 {
+    font-size: 32px;
+    margin-bottom: 30px
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    overflow: hidden
+}
+
+.slider img {
+    width: 320px;
+    border-radius: 12px;
+    opacity: .6
+}
+
+.slider .active {
+    opacity: 1
+}
+
+.arrows {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px
+}
+
+.arrows button {
+    background: #030303;
+    color: #fff;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer
+}
+
+.arrows button:hover {
+    background: #755CDE
+}
+
+/* BOOK A CALL */
+.book {
+    background: #030303;
+    color: #fff;
+    border-radius: 12px;
+    padding: 60px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 30px
+}
+
+.book h2 {
+    font-size: 38px;
+    margin-bottom: 15px
+}
+
+.book p {
+    color: #FFF7F0;
+    line-height: 1.6
+}
+
+/* TABLET */
+@media(max-width:900px) {
+    .hero h1 {
+        font-size: 44px
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "graphic graphic ui apps"
+            "graphic graphic illus photo"
+            "motion motion motion motion";
+    }
+
+    .about {
+        gap: 40px
+    }
+
+    .about img {
+        width: 340px;
+        height: 340px
+    }
+
+    .about h2 {
+        font-size: 30px
+    }
+
+    .book {
+        flex-direction: column;
+        text-align: center
+    }
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+    .hero h1 {
+        font-size: 36px
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "graphic graphic"
+            "graphic graphic"
+            "ui apps"
+            "illus illus"
+            "photo photo"
+            "motion motion";
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px
+    }
+
+    .about img {
+        width: 300px;
+        height: 300px
+    }
+
+    .about h2 {
+        font-size: 28px
+    }
+
+    .slider img {
+        width: 260px
+    }
+
+    .book {
+        padding: 40px 25px
+    }
+
+    .book h2 {
+        font-size: 28px
+    }
+
+    .btn-black,
+    .btn-orange {
+        padding: 12px 20px;
+        font-size: 13px
+    }
+}
+
+.card i {
+    font-style: normal;
+    font-size: 48px;
+    align-self: flex-end
+}
+
+.graphic i {
+    font-size: 80px
+}
